@@ -7,6 +7,12 @@ public class Main {
 
     public static void main(String[] args) {
         Train myTrain = new Train(FuelType.STEAM, 50, 100, 5, 102);
+        Engine myEngine = myTrain.getEngine();
+        while (myEngine.go()) {
+            System.out.println("Choo choo!");
+        }
+        myEngine.refuel();
+        myEngine.go();
         Car myCar = myTrain.getCar(4);
         Random rand = new Random();
         for (int i = 0; i < 50; i++) {
