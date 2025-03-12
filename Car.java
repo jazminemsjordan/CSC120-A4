@@ -15,7 +15,7 @@ public class Car implements CarRequirements{
     }
 
     /**
-     * Method to retrieve capacity
+     * Accessor to retrieve capacity
      * @return the maximum capacity of the car
      */
     public int getCapacity() {
@@ -23,7 +23,7 @@ public class Car implements CarRequirements{
     }
 
     /**
-     * Method to retrieve seatsRemaining
+     * Method to calculate unoccupied seats
      * @return the number of empty seats left in the car
      */
     public int seatsRemaining () {
@@ -65,9 +65,13 @@ public class Car implements CarRequirements{
      * Method to print a list of all car passengers to the console
      */
     public void printManifest() {
+        if (manifest == null) {
+            System.out.println("This car is empty!");
+        }
+
         for (int i = 0; i < manifest.size(); i ++) {
             Passenger currentPassenger = manifest.get(i);
-            System.out.println(currentPassenger);
+            System.out.println(currentPassenger.getName());
         }
     }
 }
